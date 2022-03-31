@@ -1,35 +1,43 @@
-# 模块 8 - 实验室 1 - 练习 1 - 启用设备管理
+---
+ms.openlocfilehash: 416e635c23e85540deef0775c21548f335342d12
+ms.sourcegitcommit: 619124fc7aa1c770a67c77e6bbc16fa13e73f2f0
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 01/04/2022
+ms.locfileid: "137820939"
+---
+# <a name="module-8---lab-1---exercise-1---enable-device-management"></a>模块 8 - 实验室 1 - 练习 1 - 启用设备管理
 
 
-你是 Adatum Corporation 的安全管理员 Holly Dickson，并在虚拟实验室环境中部署了 Microsoft 365。在本实验室中，你将使用 Intune 管理用户设备。
+你是 Adatum Corporation 的安全管理员 Holly Dickson，并在虚拟实验室环境中部署了 Microsoft 365。 在本实验室中，你将使用 Intune 管理用户设备。
 
-在本练习中，你将验证 Adatum 是否已安装企业移动性 + 安全性 E5 产品。然后，你将验证是否已将它分配给你的测试用户帐户，并将为 Holly Dickson 分配许可证。
+在本练习中，你将验证 Adatum 是否已安装企业移动性 + 安全性 E5 产品。 然后，你将验证是否已将它分配给你的测试用户帐户，并将为 Holly Dickson 分配许可证。
 
-### 任务 1：验证并分配企业移动性 + 安全性许可证
+### <a name="task-1-verify-and-assign-enterprise-mobility--security-licenses"></a>任务 1：验证并分配企业移动性 + 安全性许可证
 
-在本任务中，你将验证 Adatum 是否已安装企业移动性 + 安全性 E5 产品，并检查有多少许可证可用。然后，你将验证是否已将许可证分配给你的测试用户帐户，并将为 Holly Dickson 分配许可证。
+在本任务中，你将验证 Adatum 是否已安装企业移动性 + 安全性 E5 产品，并检查有多少许可证可用。 然后，你将验证是否已将许可证分配给你的测试用户帐户，并将为 Holly Dickson 分配许可证。
 
-1. 你仍应使用 **lon-cl1\admin** 帐户登录到客户端 1 VM (LON-CL1)，并且仍应以 Holly Dickson **(holly@M365xZZZZZZ.onmicrosoft.com)** 的身份登录 Microsoft 365，密码为 **Pa55w.rd**。
+1. 你仍应使用 lon-cl1\admin 帐户登录到客户端 1 VM (LON-CL1)，并且应该以 Holly Dickson (holly@M365xZZZZZZ.onmicrosoft.com) 的身份使用密码 Pa55w.rd 登录到 Microsoft 365。  
 
-2. 在 **Microsoft Edge** 中，你仍应有一个打开到 **Microsoft 365 管理中心**的选项卡；如果有，请立即选择该选项卡。如果没有，请输入 **https://portal.office.com** 以 **Holly** 的身份登录，然后在 **Microsoft Office 主页**中选择“**管理员**”。
+2. 在 Microsoft Edge 中，你仍应有一个打开到 Microsoft 365 管理中心的选项卡；如果有，请立即选择该选项卡。  如果没有，请输入 https://portal.office.com ，以 Holly 的身份登录，然后在 Microsoft Office 主页中选择“管理员”。   
 
-3. 在 **Microsoft 365 管理中心**中，选择左侧导航窗格中的“**计费**”，然后在其下选择“**许可证**”。
+3. 在 Microsoft 365 管理中心中，选择左侧导航窗格中的“计费”，然后在其下选择“许可证”  。
 
-4. 在“**许可证**”页面上，选择“**企业移动性 + 安全性 E5**”。
+4. 在“许可证”页面上，选择“企业移动性 + 安全性 E5” 。
 
-5. 在“**企业移动性 + 安全性 E5**”页面中的用户列表下，验证试点团队成员（**Alex Wilber**、**Joni Sherman**、**Lynne Robbins** 和 **MOD 管理员**）是否都分配有许可证。
+5. 在“企业移动性 + 安全性 E5”页面中的用户列表下，验证试点团队成员（Alex Wilber、Joni Sherman、Lynne Robbins 和 MOD 管理员）是否都分配有许可证    。
 
-    **备注：** 这些用户帐户是作为 Office 365 租户的一部分创建的，在此过程中，每个帐户都分配有一个 Office 365 E5 许可证和一个企业移动性 + 安全性 E5 许可证。
+    **注意：** 这些用户帐户是作为 Office 365 租户的一部分创建的，在此过程中，每个帐户都分配有一个 Office 365 E5 许可证和一个企业移动性 + 安全性 E5 许可证。
 
-6. 未分配有企业移动性 + 安全性 E5 许可证的用户是你的全局管理员 Holly Dickson。如果你在之前的实验室中创建了 Holly 的用户帐户，当时可能只是按指示向其分配了 Office 365 E5 许可证。你现在将为她分配企业移动性 + 安全性 E5 许可证。  如果 Holly 已经拥有企业移动性 + 安全性 E5 许可证，你可以跳到下一个任务。
+6. 未分配有企业移动性 + 安全性 E5 许可证的用户是你的全局管理员 Holly Dickson。 如果你在之前的实验室中创建了 Holly 的用户帐户，当时可能只是按指示向其分配了 Office 365 E5 许可证。 你现在将为她分配企业移动性 + 安全性 E5 许可证。  如果 Holly 已经拥有企业移动性 + 安全性 E5 许可证，你可以跳到下一个任务。
 
-    要为 Holly 分配许可证，请选择“**+ 分配许可证**”。
+    要为 Holly 分配许可证，请选择“+ 分配许可证”。
 
-7. 在“**向用户分配许可证**”页面上，选择“**输入姓名或电子邮件地址**”字段，然后在显示的用户列表中选择“**Holly Dickson**”。
+7. 在“向用户分配许可证”页面上，选择“输入姓名或电子邮件地址”字段，然后在显示的用户列表中选择“Holly Dickson”  。
 
-8. 选择“**分配**”。
+8. 选择“分配”。
 
-9. 关闭“**你已向 Holly Dickson 分配了许可证**”窗口。
+9. 关闭“你已向 Holly Dickson 分配了许可证”窗口。
 
 10. 让客户端 1 VM 保持打开状态，以便本实验室的剩余部分使用。
 
@@ -37,4 +45,4 @@
 
 
 
-# 继续进行练习 2
+# <a name="proceed-to-lab-1---exercise-2"></a>继续进行实验室 1 - 练习 2

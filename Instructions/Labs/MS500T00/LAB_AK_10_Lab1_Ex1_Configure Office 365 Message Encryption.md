@@ -1,63 +1,71 @@
-# 模块 10 - 实验室 1 - 练习 1 - 配置 Office 365 邮件加密
+---
+ms.openlocfilehash: b905caab0ca6f2c1c04c9619b086cfd61fbb283e
+ms.sourcegitcommit: 25b9793190d40e69ed31815267fb6754397768bd
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 02/02/2022
+ms.locfileid: "137943317"
+---
+# <a name="module-10---lab-1---exercise-1---configure-office-365-message-encryption"></a>模块 10 - 实验室 1 - 练习 1 - 配置 Office 365 邮件加密
 
 
-在此实验室中，你将扮演 Adatum 安全管理员 Holly Dickson 这一角色。你的任务是在 Adatum 的 Microsoft 365 部署中试用 Office 365 邮件加密。
+在此实验室中，你将扮演 Adatum 安全管理员 Holly Dickson 这一角色。 你的任务是在 Adatum 的 Microsoft 365 部署中试用 Office 365 邮件加密。
 
-在本练习中，你将为租户设置 Azure 权限管理。还将了解如何使用 Exchange 管理中心创建邮件流加密规则。
+在本练习中，你将为租户设置 Azure 权限管理。 还将了解如何使用 Exchange 管理中心创建邮件流加密规则。
 
-### 任务 1 - 启用 Exchange Online 的 Azure 权限管理
+### <a name="task-1--enable-azure-rights-management-for-exchange-online"></a>任务 1 - 启用 Exchange Online 的 Azure 权限管理
 
 在此任务中，你将激活 Microsoft 365 管理中心提供的权限管理保护。 
  
-1. 切换到客户端 VM (**LON-CL1**)。你仍应以 **LON-CL1\Admin** 的身份登录到 LON-CL1，并且仍应以 **Holly Dickson** 的身份登录到 Microsoft 365。 
+1. 切换到客户端 VM (LON-CL1)。 你仍应以 LON-CL1\Admin 的身份登录到 LON-CL1，并且仍应以 Holly Dickson 的身份登录到 Microsoft 365 。 
 
-2. 打开 Microsoft 365 管理中心 `https://admin.microsoft.com` - 如果它还未在浏览器中打开。
+2. 打开 Microsoft 365 管理中心 `https://admin.microsoft.com`（如果尚未在浏览器中打开）。
 
-3. 选择“**设置**”，然后选择“**组织设置**”。
+3. 选择“设置”，然后选择“组织设置” 。
 
-4. 在“服务”选项卡上选择“**Microsoft Azure 信息保护**”。
+4. 在“服务”选项卡上选择“Microsoft Azure 信息保护”。
 
-5. 在“Microsoft Azure 信息保护”窗格中选择“**管理 Microsoft Azure 信息保护**”设置。
+5. 在“Microsoft Azure 信息保护”窗格中选择“管理 Microsoft Azure 信息保护”设置。
 
 6. 系统可能会要求你重新登录。  如果是的话，请以 Holly Dickson 的身份登录。
 
-7. 如果尚未激活权限管理，请选择“**激活**”。现在已经验证了租户中权限管理的激活。
+7. 如果尚未激活权限管理，请选择“激活”。 现在已经验证了租户中权限管理的激活。
   
 
-### 任务 2 - 使用 Exchange 管理中心创建邮件流加密规则
+### <a name="task-2--create-a-mail-flow-encryption-rule-using-the-exchange-admin-center"></a>任务 2 - 使用 Exchange 管理中心创建邮件流加密规则
 
-在此任务中，你将使用 Exchange 管理中心在 Exchange Online 环境中为邮件创建加密规则。在下一个任务中，你将使用 PowerShell 进行相同操作。 
+在此任务中，你将使用 Exchange 管理中心在 Exchange Online 环境中为邮件创建加密规则。 在下一个任务中，你将使用 PowerShell 进行相同操作。 
 
-1. 在 **LON-CL1** VM 上，你仍应以 Holly Dickson 的身份登录到 Microsoft 365 管理中心。如果已关闭 Edge 浏览器或 Microsoft 365 管理中心选项卡，则在 Microsoft Edge 中导航到 `https://portal.office.com`，并使用帐户 **Holly@M365xZZZZZZ.onmicrosoft.com** 和密码 Pa55w.rd 登录（其中，ZZZZZZ 是实验室托管提供者提供的唯一租户 ID）。 
+1. 在 LON-CL1 VM 上，你仍应以 Holly Dickson 的身份登录到 Microsoft 365 管理中心。 如果已关闭 Edge 浏览器或 Microsoft 365 管理中心选项卡，则在 Microsoft Edge 中导航到 `https://portal.office.com`，并以 Holly@M365xZZZZZZ.onmicrosoft.com 的身份和密码 `Pa55w.rd` 登录（其中，ZZZZZZ 是实验室托管提供者提供的唯一租户 ID）。 
 
-2. 在 **Office 365 主页中**，选择“**管理员**”。
+2. 在 Office 365 主页中，选择“管理员” 。
 
-3. 在 **Microsoft 365 管理中心**的左侧导航窗格中，选择“**全部显示**”，以展开导航窗格中的选项列表。 
+3. 在 Microsoft 365 管理中心的左侧导航窗格中，选择“全部显示”，以展开导航窗格中的选项列表 。 
 
-4. 向下滚动导航窗格并在“**管理中心**”下方，选择“**Exchange**”。这将打开 Exchange 管理中心。
+4. 向下滚动导航窗格并在“管理中心”下方，选择“Exchange” 。 这将打开 Exchange 管理中心。
 
-5. 在 **Exchange 管理中心**的左侧导航窗格中，选择“**邮件流**”。
+5. 在“Exchange 管理中心”的左侧导航窗格中，选择“邮件流”，然后选择“规则”。  
 
-6. 默认情况下，在“**邮件流**”页面的顶部会显示“**规则**”选项卡。在“**规则**”选项卡中，选择加号 (**+**) 以创建新的规则。这将显示一个操作的下拉菜单。选择“**创建新规则**”。
+6. 在“规则”页上，选择加号 (+) 以创建新的规则。  这将显示一个操作的下拉菜单。 选择“创建新规则”。
 
-7. 在“**新建规则**”窗口的“**名称**”框中，输入`Encrypt mail for guest@contoso.com`作为该规则的名称。
+7. 在“新建规则”窗口的“名称”框中，输入 `Encrypt mail for guest@contoso.com` 作为该规则的名称。 
 
-8. 选择“**在以下情况应用此规则...**”条件框中的下拉箭头。在下拉菜单中，选择“**收件人是**”。 
+8. 选择“在以下情况应用此规则...”** **条件框中的下拉箭头。 在下拉菜单中，选择“收件人是”。 
 
-9. 对于该条件，必须从联系人列表中选择现有名称，或者在“**检查名称**”框中键入新的电子邮件地址。本例中，在“**检查名称**”框中输入`guest@contoso.com`，然后选择“**确定**”。
+9. 对于该条件，必须从联系人列表中选择现有名称，或者在“检查名称”框中键入新的电子邮件地址。 本例中，在“检查名称”框中输入 `guest@contoso.com`，然后选择“确定”。 
 
-10. 因为你需要添加更多条件，因此选择“**更多选项**”。
+10. 因为你需要添加更多条件，因此选择“更多选项”。
 
-11. 选择“**添加条件**”。 
+11. 选择“添加条件”。 
 
-12. 注意第二个条件框是如何出现在“**收件人是...**”条件框下方的。在第二个条件框中，选择下拉箭头并选择“**收件人**”。然后在下拉菜单中选择“**在外部/内部**”。
+12. 注意第二个条件框是如何出现在“收件人是...” 条件框下方的。 在第二个条件框中，选择下拉箭头并选择“收件人”。 然后在下拉菜单中选择“在外部/内部”。
 
-13. 在“**选择收件人位置**”对话框中，选择下拉箭头。在下拉菜单中，选择“**组织外部**”，然后选择“**确定**”。 
+13. 在“选择收件人位置”对话框中，选择下拉箭头。 在下拉菜单中，选择“组织外部”，然后选择“确定” 。 
 
-14. 现在需要定义应用此规则时要执行的操作。在“**请执行以下操作...**”框中，选择下拉箭头。在下拉菜单中，选择“**修改邮件安全性...**”。在弹出的菜单中，选择“**应用 Office 365 邮件加密和权限保护**”。
+14. 现在需要定义应用此规则时要执行的操作。 在“执行以下操作...” 框中，选择下拉箭头。 在下拉菜单中，选择“修改邮件安全性...”。 在弹出的菜单中，选择“应用 Office 365 邮件加密和权限保护”。
 
-15. 在“**选择 RMS 模板**”对话框中，依次选择下拉箭头、“**加密**”和“**确定**”。
+15. 在“选择 RMS 模板”对话框中，依次选择下拉箭头、“加密”和“确定”  。
 
-16. 选择“**保存**”。规则在保存后，应出现在 Exchange 管理中心的规则列表中。
+16. 选择“保存”。 规则在保存后，应出现在 Exchange 管理中心的规则列表中。
 
 4. 将浏览器会话保持打开状态以进行下一个练习。

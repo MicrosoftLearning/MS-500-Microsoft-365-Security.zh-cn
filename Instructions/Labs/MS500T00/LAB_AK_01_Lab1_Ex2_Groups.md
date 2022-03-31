@@ -1,147 +1,155 @@
-# 模块 1 - 实验室 1 - 练习 2 - 管理用户和组 
+---
+ms.openlocfilehash: e8d7f1226d3df03b685e6e9d3aa657cf9c64a34a
+ms.sourcegitcommit: 25b9793190d40e69ed31815267fb6754397768bd
+ms.translationtype: HT
+ms.contentlocale: zh-CN
+ms.lasthandoff: 02/02/2022
+ms.locfileid: "137943300"
+---
+# <a name="module-1---lab-1---exercise-2---manage-users-and-groups"></a>模块 1 - 实验室 1 - 练习 2 - 管理用户和组 
 
-在以下实验室练习中，你将扮演 Adatum Corporation 安全管理员 Holly Dickson 这一角色。在本练习中，你将在 Microsoft 365 中执行多个用户和组管理功能。你将创建两个 Office 365 组，并将现有 Microsoft 365 用户分配为这些组的成员。接下来，你将删除其中一个组，然后使用 PowerShell 恢复删除的组。
+在以下实验室练习中，你将扮演 Adatum Corporation 安全管理员 Holly Dickson 这一角色。 在本练习中，你将在 Microsoft 365 中执行多个用户和组管理功能。 你将创建两个 Office 365 组，并将现有 Microsoft 365 用户分配为这些组的成员。 接下来，你将删除其中一个组，然后使用 PowerShell 恢复删除的组。
 
-**备注：** 实验室托管提供程序提供的 VM 环境拥有十个现有 Microsoft 365 用户帐户，以及一些现有的本地用户帐户。本课程的实验室中将使用其中几个现有用户帐户。这样你就无需执行创建用户帐户的繁琐任务，这通常不是由安全管理员执行的任务。实验室仍将提供创建 Microsoft 365 用户帐户的体验，以防你不熟悉该过程。
+**注意：** 实验室托管提供程序提供的 VM 环境拥有十个现有 Microsoft 365 用户帐户，以及一些现有的本地用户帐户。 本课程的实验室中将使用其中几个现有用户帐户。 这样你就无需执行创建用户帐户的繁琐任务，这通常不是由安全管理员执行的任务。 实验室仍将提供创建 Microsoft 365 用户帐户的体验，以防你不熟悉该过程。
 
 
-### 任务 2 – 创建和管理组  
+### <a name="task-1--create-and-manage-groups"></a>任务 1 - 创建和管理组  
 
-在此任务中，作为 Adatum 的新安全管理员 Holly Dickson，你将开始实现 Adatum 的 Microsoft 365 试点项目。因此，在执行此任务时，你需要首先以 MOD 管理员身份注销 Microsoft 365，然后以 Holly 的身份重新登录。<br/>
+在此任务中，作为 Adatum 的新安全管理员 Holly Dickson，你将开始实现 Adatum 的 Microsoft 365 试点项目。 因此，在执行此任务时，你需要首先以 MOD 管理员身份注销 Microsoft 365，然后以 Holly 的身份重新登录。<br/>
 
-在此任务中，你将创建两个新组，然后通过为它们分配用户来管理这些组。其中一个组为 Office 365 组，另一个为安全组；这有助于观察两种类型的组的一些差异。组创建完成后，你将删除其中一个组。这将开启下一个任务，即考查如何使用 Windows PowerShell 恢复删除的组。
+在此任务中，你将创建两个新组，然后通过为它们分配用户来管理这些组。 其中一个组为 Office 365 组，另一个为安全组；这有助于观察两种类型的组的一些差异。 组创建完成后，你将删除其中一个组。 这将开启下一个任务，即考查如何使用 Windows PowerShell 恢复删除的组。
 
-1. 你仍应使用 **LON-DC1\Admin** 帐户登录域控制器 1 VM，而且应以 **MOD 管理员**身份登录到 Microsoft 365。在“**Microsoft 365 管理中心**”选项卡上，选择浏览器右上角“**MOD 管理员**”（**MA** 圆圈）的用户图标，然后在“**我的帐户**”窗格中，选择“**注销**”。 <br/>
-	
-	**重要提示：** 注销一个用户帐户然后用另一个用户帐户登录时，应关闭除当前选项卡之外的所有浏览器选项卡。最佳做法是关闭与先前用户关联的窗口，这有助于避免任何混淆。现在，花点时间关闭除“**注销**”选项卡之外的所有其他浏览器选项卡。 
-	
-2. 在 Internet Explorer 浏览器中，导航到 `https://portal.office.com/`。 
+1. 你仍应使用 LON-DC1\Admin 帐户登录域控制器 1 VM，而且应以 MOD 管理员身份登录到 Microsoft 365 。 在“Microsoft 365 管理中心”选项卡上，选择浏览器右上角“MOD 管理员”（MA 圆圈）的用户图标，然后在“我的帐户”窗格中，选择“注销”    。 <br/>
+    
+    **重要提示：** 注销一个用户帐户然后用另一个用户帐户登录时，应关闭除当前选项卡之外的所有浏览器选项卡。最佳做法是关闭与先前用户关联的窗口，这有助于避免任何混淆。 现在，花点时间关闭除“注销”选项卡之外的所有其他浏览器选项卡。 
+    
+2. 在 Microsoft Edge 浏览器中，导航到 `https://portal.office.com/`。 
 
-3. 在“**选择帐户**”窗口中，只会显示刚刚注销的管理员帐户。选择“**使用另一帐户**”。 
+3. 在“选择帐户”窗口中，只会显示刚刚注销的管理员帐户。 选择“使用另一帐户”。 
 
-4. 在“**登录**”窗口中，输入 **Holly@M365xZZZZZZ.onmicrosoft.com** （其中 ZZZZZZ 是实验室托管提供程序提供的唯一租户 ID）。选择“**下一步**”。
+4. 在“登录”窗口中，输入 Holly@M365xZZZZZZ.onmicrosoft.com（其中 ZZZZZZ 是实验室托管提供程序提供的唯一租户 ID） 。 选择“**下一步**”。
 
-5. 在“**输入密码**”窗口中，输入 `Pa55w.rd`，然后选择“**登录**”。
+5. 在“输入密码”窗口中，输入 `Pa55w.rd`，然后选择“登录”。 
 
-6. 如果出现“**使用 Office 365 完成工作**”窗口，请选择“**X**”将其关闭。 
+6. 如果出现“使用 Office 365 完成工作”窗口，请选择“X”将其关闭 。 
 
-7. 在“**Office 365 主页**”中，选择“**管理员**”以打开 Microsoft 365 管理中心（如果“**管理员**”被“**Office 365 应用**”框覆盖，请选择“**知道了!**”以关闭该框）。
+7. 在“Office 365 主页”中，选择“管理员”以打开 Microsoft 365 管理中心（如果“管理员”被“Office 365 应用”框覆盖，请选择“知道了!”     以关闭该框）。
 
-8. 如果出现调查窗口，请选择“**取消**”。
+8. 如果出现调查窗口，请选择“取消”。
 
-9. 在“**Microsoft 365 管理中心**”，选择左侧导航窗格中的“**组**”，然后在其下方选择“**活动组**”。 
+9. 在“Microsoft 365 管理中心”中，选择左侧导航窗格中的“团队和组”，然后在其下方选择“活动团队和组”。   
 
-10. 在“**活动组**”页面，选择组列表上方的菜单栏中显示的“**添加组**”。  
+10. 在“活动团队和组”页面中，选择组列表上方的菜单栏中显示的“添加组”。   
 
-11. 在“**选择组类型**”窗口中，选择“**Microsoft 365 (推荐)**”，然后选择“**下一步**”。 
+11. 在“选择组类型”窗口中，选择“Microsoft 365 (推荐)”，然后选择“下一步”  。 
 
-12. 在“**设置基础**”窗口的“**名称**”字段中输入 `Inside Sales`，然后在“**描述**”字段中输入 `Collaboration group for the Inside Sales team.`。选择“**下一步**”。
+12. 在“设置基本信息”窗口中，在“名称”字段中输入 `Inside Sales`，然后在“说明”字段中输入 `Collaboration group for the Inside Sales team.`。   选择“**下一步**”。
 
-13. 在“**分配所有者**”窗口中，将 Allan Deyoung 和 Patti Fernandez 分配为该组的所有者。 
-	- 在“**所有者**”字段中输入 `Allan`。在出现的下拉菜单中，选择“**Allan Deyoung**”。 
-	- 在“**所有者**”字段中输入 `Patti`。在出现的下拉菜单中，选择“**Patti Fernandez**”。 
-	- 选择“**下一步**”。
+13. 在“分配所有者”窗口中，选择“分配所有者”，并将 Allan Deyoung 和 Patti Fernandez 分配为该组的所有者。  
+    - 在“所有者”字段中输入 `Allan`。 在出现的下拉菜单中，选择“Allan Deyoung”。 
+    - 在“所有者”字段中输入 `Patti`。 在出现的下拉菜单中，选择“Patti Fernandez”。 
+    - 单击“添加 (2)”，然后选择“下一步”。 
 
 14. 保留默认设置，然后单击“成员”下的“下一步”。
 
-15. 在“**编辑设置**”窗口的“**组电子邮件地址**”字段中输入 `insidesales`。在“**隐私**”部分下，验证是否已选择“**公开**”选项（在需要时选择），并在“**将 Microsoft Teams 添加到组**”部分，验证是否已选中“**为此组创建团队**”复选框（在需要时选择）。选择“**下一步**”。
+15. 在“编辑设置”窗口的“组电子邮件地址”字段中输入 `insidesales`。  在“隐私”部分下，验证是否已选择“公开”选项（在需要时选择），并在“将 Microsoft Teams 添加到组”部分，验证是否已选中“为此组创建团队”复选框（在需要时选择）   。 选择“**下一步**”。 
 
-15. 在“**查看并完成添加组**”窗口中，查看输入的内容。如果一切正确，选择“创建组”；否则，请选择“**返回**”并修复需要更正的任何内容（或在需要调整的特定区域下选择“**编辑**”）。
+16. 在“查看并完成添加组”窗口中，查看输入的内容。 如果一切正确，选择“创建组”；否则，请选择“返回”并修复需要更正的任何内容（或在需要调整的特定区域下选择“编辑”）。  
 
-16. 在“**已创建新组**”窗口中，请注意页面顶部的注释，新组可能需要 5 分钟才会显示在组列表中。 </br>
+17. 在“已创建新组”窗口中，请注意页面顶部的注释，新组可能需要 5 分钟才会显示在组列表中。 </br>
 
-	选择“**关闭**”。这回让你返回到“**组**”页面。 
+    选择“关闭”。 这会返回到“活动团队和组”页面。 
 
-17. 重复步骤 10-16，添加具有以下信息的新组：
+18. 重复步骤 10-16，添加具有以下信息的新组：
 
-	- 组类型： `Security`
+    - 组类型：`Security`
 
-	- 名称： `IT Admins`
+    - 名称：`IT Admins`
 
-	- 描述： `IT administrative personnel` <br/>
+    - 说明：`IT administrative personnel` <br/>
 
-	**备注：** 安全组没有所有者、电子邮件地址或隐私设置
+    备注：安全组没有所有者、电子邮件地址或隐私设置
 
-18. 若两个新组均未在“**组**”列表中显示，请等待一分钟左右，然后选择菜单栏上的“**刷新**”选项（在“添加组”的右侧）。可能需要再等几分钟，这两个组才会显示。
+19. 若两个新组均未在“组”列表中显示，请等待一分钟左右，然后选择菜单栏上的“刷新”选项（在“添加组”的右侧）。   可能需要再等几分钟，这两个组才会显示。
 
-	**备注：** 由于 IT 管理员组属于安全组，因此没有组电子邮件地址。两个额外的组类型是启用邮件的安全组和通讯组。本实验室中没有使用这两种组类型，原因在于这两种类型的组可能需要长达一个小时才会显示在组列表中；而 Office 365 组和安全组通常只需几分钟即会显示。 
+    **注意：** 由于 IT 管理员组属于安全组，因此没有组电子邮件地址。 两个额外的组类型是启用邮件的安全组和通讯组列表。 本实验室中没有使用这两种组类型，原因在于这两种类型的组可能需要长达一个小时才会显示在组列表中；而 Office 365 组和安全组通常只需几分钟即会显示。 
 
-19. 现在，已准备好为组添加成员。在“**组**”列表中，选择“**Inside Sales**”组，一个针对该组的窗口随即打开。 
+20. 现在，已准备好为组添加成员。 在“组”列表中，选择“Inside Sales”组，一个针对该组的窗口随即打开 。 
 
-20. 在“**Inside Sales**”组窗口中，选择“**成员**”选项卡。
+21. 在“Inside Sales”组窗口中，选择“成员”选项卡 。
 
-21. 在“**成员**”部分下，可以看到两个“所有者”（Allan 和 Patti），但也会看到成员数为零 (0)。选择 **“查看全部”和“管理成员”**，将成员添加到组。 
+22. 在“成员”部分下，可以看到两个“所有者”（Allan 和 Patti），但也会看到成员数为零 (0)。 选择“查看全部”和“管理成员”，将成员添加到组。 
 
-22. 在“**Inside Sales**”组窗口中，选择“**+ 添加成员**”。当前用户列表随即显示。
+23. 在“Inside Sales”组窗口中，选择“+ 添加成员” 。 当前用户列表随即显示。
 
-23. 在用户列表中，选择“**Diego Siciliani**”和“**Lynne Robbins**”，然后滚动到底部并选择“**添加(2)**”。 
+24. 在用户列表中，选择“Diego Siciliani”和“Lynne Robbins”，然后滚动到底部并选择“添加(2)”  。 
 
-24. 选择“**后退箭头**”。 
+25. 选择“后退箭头”。 
 
-25. 现在，Diego 和 Lynne 应该在“**Inside Sales**”窗口中显示为该组的成员。选择右上角的“**X**”关闭窗口。 
+26. 现在，Diego 和 Lynne 应该在“Inside Sales”窗口中显示为该组的成员。 选择右上角的“X”关闭窗口。 
 
-26. 重复步骤 19-25，将 **Isaiah Langer**、**Megan Bowen** 和 **Nestor Wilke** 添加为“**IT 管理员**”组的成员。
+27. 重复步骤 19-25，将 Isaiah Langer、Megan Bowen 和 Nestor Wilke 添加为“IT 管理员”组的成员   。
 
-27. 现在可以测试删除组的效果。在“**组**”列表中，选择出现在“Inside Sales”组右侧的垂直省略号图标（“**更多操作**”）。在出现的菜单框中，选择“**删除组**”。 
+28. 现在可以测试删除组的效果。 在“组”列表中，选择出现在“Inside Sales”组右侧的垂直省略号图标（“更多操作”）。   在出现的菜单框中，选择“删除团队”。 
 
-28. 在“**删除 Inside Sales**”窗口中，选择“**删除组**”按钮。
+29. 在“删除 Inside Sales”窗口中，选择“删除组”按钮 。
 
-29. 删除组后，选择“**关闭**”。 
+30. 删除组后，选择“关闭”。 
 
-30. 完成此操作后，将返回到“**Microsoft 365 管理中心**”的“**组**”列表。**Inside Sales** 组不应再显示。若 Inside Sales 组仍然显示，请等待几分钟，然后选择菜单栏上的“**刷新**”选项。更新后的“组”列表不应再包含“**Inside Sales**”组。
+31. 完成此操作后，将返回到“Microsoft 365 管理中心”的“组”列表 。 Inside Sales 组不应再显示。 若 Inside Sales 组仍然显示，请等待几分钟，然后选择菜单栏上的“刷新”选项。 更新后的“组”列表不应再包含“Inside Sales”组。
 
-31. 要验证删除该组是否会影响其任何所有者或成员，请在左侧导航窗格中选择“**用户**”，然后选择“**活跃用户**”。 
+32. 要验证删除该组是否会影响其任何所有者或成员，请在左侧导航窗格中选择“用户”，然后选择“活跃用户” 。 
 
-32. 在“**活跃用户**”列表中，验证 Inside Sales 组的两个所有者（**Allan Deyoung** 和 **Patti Fernandez**）以及两个成员（**Diego Siciliani** 和 **Lynne Robbins**）是否仍然显示在用户列表中。这验证了删除组并不会删除作为组所有者或成员的用户帐户。
+33. 在“活跃用户”列表中，验证 Inside Sales 组的两个所有者（Allan Deyoung 和 Patti Fernandez）以及两个成员（Diego Siciliani 和 Lynne Robbins）是否仍然显示在用户列表中。     这验证了删除组并不会删除作为组所有者或成员的用户帐户。
 
-33. 保持登录到域控制器 VM，同时将浏览器中的 Microsoft 365 管理中心保持在打开状态来执行下一个任务。
+34. 保持登录到域控制器 VM，同时将浏览器中的 Microsoft 365 管理中心保持在打开状态来执行下一个任务。
 
 
-### 任务 3 – 使用 PowerShell 恢复组 
+### <a name="task-3--recover-groups-using-powershell"></a>任务 3 – 使用 PowerShell 恢复组 
 
-在此任务中，你将使用 Windows PowerShell 来恢复之前删除的 Inside Sales 组。要使用 Windows PowerShell 执行此 Azure AD 相关任务，必须安装 Windows Azure Active Directory PowerShell 模块。 
+在此任务中，你将使用 Windows PowerShell 来恢复之前删除的 Inside Sales 组。 要使用 Windows PowerShell 执行此 Azure AD 相关任务，必须安装 Windows Azure Active Directory PowerShell 模块。 
 
-**备注：** 你应该已经在之前的实验室中安装了 Windows Azure Active Directory PowerShell 模块。   
+**注意：** 你应该已经在之前的实验室中安装了 Windows Azure Active Directory PowerShell 模块。   
 
-1. 如果未以 **ADATUM\Administrator** 和密码 **Pa55w.rd** 登录 LON-DC1 VM，请立即登录。
+1. 如果未以 ADATUM\Administrator 和密码 Pa55w.rd 登录 LON-DC1 VM，请立即登录  。
 
-2. 如果 Windows PowerShell 在上一个练习后仍处于打开状态，请选择任务栏上的“**Windows PowerShell**”图标；否则，必须像之前一样打开 Windows PowerShell 的提升实例。最大化 PowerShell 窗口。
+2. 如果 Windows PowerShell 在上一个练习后仍处于打开状态，请选择任务栏上的“Windows PowerShell”图标；否则，必须像之前一样打开 Windows PowerShell 的提升实例。 最大化 PowerShell 窗口。
 
-3. 在 **Windows PowerShell** 中键入以下命令（在键入每个命令后按 Enter）：
+3. 在 Windows PowerShell 中键入以下命令（在键入每个命令后按 Enter）：
 
-	- 必须运行以下命令来连接经过身份验证的帐户，才能使用 Active Directory cmdlet 请求：<br/> 
-	
-		‎`Connect-AzureAD`   
+    - 必须运行以下命令来连接经过身份验证的帐户，才能使用 Active Directory cmdlet 请求： <br/> 
+    
+        ‎`Connect-AzureAD`   
 
-	- 将出现要求提供凭据的新窗口。使用 Holy 的 Microsoft 365 帐户 **Holly@M365xZZZZZZ.onmicrosoft.com**，（其中 ZZZZZZ 是实验室托管提供程序提供的唯一租户 ID）和密码 **Pa55w.rd** 登录。  
+    - 将出现要求提供凭据的新窗口。 使用 Holy 的 Microsoft 365 帐户 Holly@M365xZZZZZZ.onmicrosoft.com（其中 ZZZZZZ 是实验室托管提供程序提供的唯一租户 ID）和密码 Pa55w.rd 登录。   
 
-	- 然后，应运行以下命令来显示已删除组的存储库（运行此命令应会显示之前删除的 **Inside Sales** 组）：<br/>  
-	
-		‎`Get-AzureADMSDeletedGroup`   
+    - 然后，应运行以下命令来显示已删除组的存储库（运行此命令应会显示之前删除的 Inside Sales 组）：<br/>  
+    
+        ‎`Get-AzureADMSDeletedGroup`   
 
-	- 必须首先复制已删除组表中显示的 Inside Sales 组的对象 ID，然后才能还原此已删除的组。执行下一个命令来还原组时，将使用此 ID 来标识要还原的组。<br/>
-	
-		要复制 ID，请选择整个 ID，然后按 Ctrl-C。
+    - 必须首先复制已删除组表中显示的 Inside Sales 组的对象 ID，然后才能还原此已删除的组。 执行下一个命令来还原组时，将使用此 ID 来标识要还原的组。 <br/>
+    
+        要复制 ID，请选择整个 ID，然后按 Ctrl-C。
 
-	- 然后，应运行以下命令来检索并还原已删除的组，该组的对象 ID 与输入的值匹配：<br/>  
+    - 然后，应运行以下命令来检索并还原已删除的组，该组的对象 ID 与输入的值匹配：<br/>  
 
-		**备注：** 将以下命令中的 {objectId} 替换为上一步中复制的 Inside Sales 组的 ID 号。输入以下 Restore 命令，在需要粘贴 {objectId} 参数时，按 Ctrl+V 来粘贴 ID。然后按 Enter 运行该命令。**备注：** 如果按 Enter 后没有任何反应，可能是在对象 ID 后面粘贴了无关的隐藏字符。如果是这样，请重新键入命令，然后在按 Ctrl+V 后按几次 Delete 键，然后再次按 Enter。  <br/>
+        ‎注意：将以下命令中的 {objectId} 替换为上一步中复制的 Inside Sales 组的 ID 号。 输入以下 Restore 命令，在需要粘贴 {objectId} 参数时，按 Ctrl+V 来粘贴 ID。然后按 Enter 运行该命令。 **注意：** 如果按 Enter 后没有任何反应，可能是在对象 ID 后面粘贴了无关的隐藏字符。 如果是这样，请重新键入命令，然后在按 Ctrl+V 后按几次 Delete 键，然后再次按 Enter。  <br/>
 
-		‎`Restore-AzureADMSDeletedDirectoryObject -Id {objectId}`  
-		
+        ‎`Restore-AzureADMSDeletedDirectoryObject -Id {objectId}`  
+        
 4. 将 Windows PowerShell 窗口保持打开状态以便进行后续练习；现在只需将 PowerShell 窗口最小化。
 
-5. 现在，应验证 **Inside Sales** 组是否已恢复。为此，请在 Internet Explorer 浏览器中转到 Microsoft 365 管理中心，从左侧导航窗格中选择“**组**”，然后在其下方选择“**活动组**”以显示组列表。 
+5. 现在，应验证 Inside Sales 组是否已恢复。 为此，请在 Internet Explorer 浏览器中转到“Microsoft 365 管理中心”，从左侧导航窗格中选择“团队和组”，然后在其下方选择“活动团队和组”以显示组列表。   
 
-6. 验证 **Inside Sales** 组是否已还原并显示在组列表中。若未显示 Inside Sales 组，请等待一到两分钟，然后选择 Internet Explorer 中 URL 右侧的“**刷新**”图标。
+6. 验证 Inside Sales 组是否已还原并显示在组列表中。 若未显示 Inside Sales 组，请等待一到两分钟，然后选择 Microsoft Edge 中 URL 右侧的“刷新”图标。
 
-7. 现在，你需要验证恢复过程是否正确更新了组的成员身份。从“**组**”窗口中，选择 **Inside Sales** 组。
+7. 现在，你需要验证恢复过程是否正确更新了组的成员身份。 从“组”窗口中，选择 Inside Sales 组 。
 
-8. 在“**Inside Sales**”窗口中，选择“**成员**”选项卡。**Allan Deyoung** 和 **Patti Fernandez** 应显示为组的所有者，**Diego Siciliani** 和 **Lynne Robbins** 应显示为组的成员。
+8. 在“Inside Sales”窗口中，选择“成员”选项卡 。Allan Deyoung 和 Patti Fernandez 应显示为组的所有者，Diego Siciliani 和 Lynne Robbins 应显示为组的成员   。
 
-9. 关闭“**Inside Sales**”窗口。
+9. 关闭“Inside Sales”窗口。
 
 10. 让浏览器窗口保持打开状态，以便为下一个任务做准备。 
 
 
-# 结束实验室
+# <a name="end-lab-1"></a>结束实验室 1
