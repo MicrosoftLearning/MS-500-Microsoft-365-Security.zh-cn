@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 1a97ecb4ce509ea883ff4d29c52fcd13c841d034
-ms.sourcegitcommit: 25b9793190d40e69ed31815267fb6754397768bd
+ms.openlocfilehash: 62408c386d1a5a6a847c425c5d8adcc2070f44dd
+ms.sourcegitcommit: 45fca5e9e4dc6e398302227c4c04f451e025d9cb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/02/2022
-ms.locfileid: "137943299"
+ms.lasthandoff: 04/20/2022
+ms.locfileid: "143961337"
 ---
 # <a name="module-1---lab-1---exercise-1---set-up-your-microsoft-365-tenant"></a>模块 1 - 实验室 1 - 练习 1 - 设置 Microsoft 365 租户 
 
@@ -21,7 +21,7 @@ ms.locfileid: "137943299"
 
 1. 由于此课程可由学习合作伙伴使用几个授权实验室托管提供者中的任何一个提供，因此检索与租户关联的 UPN 名称、网络 IP 地址和租户 ID 所涉及到的实际步骤可能会因实验室托管提供者而有所不同。 因此，讲师将在课程中为你提供有关如何检索此信息的必要说明。 你应该记录以供稍后使用的信息包括：
 
-    - 租户后缀 ID。 此 ID 适用于将在所有实验室中用来登录 Microsoft 365 的 onmicrosoft.com 帐户。 其格式为 {username}@M365xZZZZZZ.onmicrosoft.com，其中 ZZZZZZ 是实验室托管提供程序提供的唯一租户后缀 ID。 记录此 ZZZZZZ 值以供稍后使用。 当有任何实验室步骤指示你登录 Office 365 或 Microsoft 365 门户时，都必须输入在此处获取的 ZZZZZZ 值。
+    - 租户后缀 ID。 此 ID 适用于将在所有实验室中用来登录 Microsoft 365 的 onmicrosoft.com 帐户。 其格式为 {username}@M365xZZZZZZ.onmicrosoft.com，其中 ZZZZZZ 是实验室托管提供者提供的唯一租户后缀 ID。 记录此 ZZZZZZ 值以供稍后使用。 当有任何实验室步骤指示你登录 Office 365 或 Microsoft 365 门户时，都必须输入在此处获取的 ZZZZZZ 值。
     - 租户密码。 这是由实验室托管提供者提供的管理员帐户的密码。
     - UPN 名称（格式为 XXYYZZa）和网络 IP 地址。 记下 IP 地址值（这是父域的 IP 地址，例如 64.64.206.13）和 UPN 名称（例如 AVEAH2a） 。
 
@@ -236,7 +236,7 @@ Holly Dickson 是 Adatum 的安全管理员。 Holly 没有为自己设置 Micro
 
 4. 在“审核日志搜索”窗口的页面右上角，选择“启用审核”，然后选择“是”来确认“你的组织设置需要进行更新，   是否继续?”。 注意：对于 MS 365 和 Office 365 企业版组织，默认开启“审核日志”。 如果该页面没有提示“开启”审核日志，则表示“审核日志”已默认开启。
 
-5. 使客户端 1 VM 和安全与合规中心保持在打开状态。
+5. 使 LON-DC1 VM 和安全与合规中心保持在打开状态。
 
 
 

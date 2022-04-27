@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 23bb1e34a22b46b2f8ee513ef7a6108e044e3d0b
-ms.sourcegitcommit: e892df78114aa3ac3094f9c5ed7097ca5559267a
+ms.openlocfilehash: 02ddbc057b4405725c6450d032e55dbc78caeb7e
+ms.sourcegitcommit: 45fca5e9e4dc6e398302227c4c04f451e025d9cb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/04/2022
-ms.locfileid: "139262466"
+ms.lasthandoff: 04/20/2022
+ms.locfileid: "143961334"
 ---
 # <a name="module-2---lab-1---exercise-1---setting-up-your-organization-for-identity-synchronization"></a>模块 2 - 实验室 1 - 练习 1 - 为组织设置标识同步 
 
@@ -40,7 +40,7 @@ ms.locfileid: "139262466"
 2.  同意许可条款和隐私声明。
 3.  单击“使用快速设置”。   
 4.  在“连接到 Azure AD”屏幕上，输入 Office 365 管理员用户名 holly@M365xZZZZZZ.onmicrosoft.com 和密码 `Pa55w.rd`，然后单击“下一步” 。   
-5.  如果有弹出登录窗口“连接到 AD DS”屏幕，请输入域管理员 Admin@M365xZZZZZZ.onmicrosoft.com 和密码 `ycYoe&L20a%%`，然后选择“下一步”  。   
+5.  如果有弹出的登录窗口“连接到 AD DS”屏幕，请输入实验室托管服务提供商提供的域管理员 Admin@M365xZZZZZZ.onmicrosoft.com 和密码，然后选择“下一步”   。   
 6.  在“连接到 AD DS”屏幕上，输入域管理员用户名 ADATUM\Administrator 和密码 `Pa55w.rd`，然后选择“下一步”  。
 7.  选中“继续执行，无需将所有 UPN 后缀与已验证的域匹配”复选框。 在 Azure AD 登录配置屏幕上选择“下一步”。   
 8.  在“准备配置”屏幕中，确保选中“配置完成后启动同步过程”复选框，然后选择“安装”  。   
@@ -55,7 +55,7 @@ ms.locfileid: "139262466"
 2.  使用以下凭据以 Holly Dickson 的身份登录：用户名为 holly@M365xZZZZZZ.onmicrosoft.com，密码为 `Pa55w.rd`  
 3.  在左侧导航栏中，选择“用户”图标，然后选择“活动用户”  
 4.  现在，应该可以看到许多用户已从本地 Active Directory 同步。  可能需要单击刷新按钮来更新页面中的数据。  
-5.  编辑以下用户以删除 Microsoft 365 E5 许可证和企业移动性 + 安全性 E5 许可证：-Debra Berger -Irvin Sayers -Johanna Lorenz -Lidia Hallowey -Pradeep Gupta 备注：预配 M365 订阅时，已分配所有可用的许可证 。 由于此实验室和之后的实验室只需要几个许可证，因此可以删除几个用户不需要的许可证分配。
+5.  仅当这些用户存在时才完成 编辑以下用户以删除 Microsoft 365 E5 许可证和企业移动性 + 安全性 E5 许可证：-Debra Berger -Irvin Sayers -Johanna Lorenz -Lidia Hallowey -Pradeep Gupta 备注：预配了 M365 订阅后，可能就已经分配了所有可用的许可证。 由于此实验室和之后的实验室只需要几个许可证，因此可以删除几个用户不需要的许可证分配。
 6.  选择“Abbie Parsons”。  Abbie 是同步之前仅位于 AD DS 域中的用户。 按如下所示编辑 Abbie Parsons 产品许可证： 
     - 位置 = 英国
     - 产品许可证 = 企业移动性 + 安全性 E5
