@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 0e7ea214bb259f3a0ea490ea606764c340d00a3f
-ms.sourcegitcommit: c203d5d5aaaf93bae4a8af2ae04b27f6314242c4
+ms.openlocfilehash: 9116378434fc989816737e35c4461b805d934e36
+ms.sourcegitcommit: f7046452e5ba445da2ec2ca1ccc7821c90ede5ef
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/13/2021
-ms.locfileid: "137820888"
+ms.lasthandoff: 05/31/2022
+ms.locfileid: "145952990"
 ---
 # <a name="module-9---lab-1---exercise-1---initialize-compliance"></a>模块 9 - 实验室 1 - 练习 1 - 初始化合规性 
 
@@ -14,7 +14,7 @@ ms.locfileid: "137820888"
 
 在 Adatum 试点项目的下一阶段，你将访问安全与合规中心来激活 Holly Dickson 的存档邮箱。   
 
-1. 转到 [Microsoft 365 合规中心](https://compliance.microsoft.com/)。 单击左侧窗格的“信息治理”（可能需要单击底部的“...全部显示”才会出现）。 在“信息治理”窗口中，单击“存档”选项卡 。 
+1. 转到 [Microsoft 365 合规中心](https://compliance.microsoft.com/)。 在左侧窗格中单击“数据生命周期管理”（可能要单击... 全部显示”才会出现）。 在“数据生命周期管理”窗口中，单击“存档”选项卡 。 
 
 3. 在“存档”窗口中，请注意存档邮箱已针对全部用户启用，而不是针对 Holly Dickson。 在为本次培训课程创建 VM 时已启用这些存档邮箱，并且租户中已经预配了这些用户。 但因为已在之前的实验室中添加了 Holly，所以她的存档邮箱被默认禁用。
 
