@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 796cfbbd80a9a47b0c3412799f9f1e1e3357d721
-ms.sourcegitcommit: c203d5d5aaaf93bae4a8af2ae04b27f6314242c4
+ms.openlocfilehash: 2d91a06ec9fa17a44af0933c1601abfffa24187f
+ms.sourcegitcommit: 042f2d80275d6d120a034be93973f99e1ae31aa6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/13/2021
-ms.locfileid: "137820927"
+ms.lasthandoff: 07/01/2022
+ms.locfileid: "146819535"
 ---
 # <a name="module-9---lab-1---exercise-2---configure-retention-tags-and-policies"></a>模块 9 - 实验室 1 - 练习 2 - 配置保留标记和策略  
 
@@ -82,13 +82,14 @@ ms.locfileid: "137820927"
 你现在已经创建了一个带有多个保留标记的新保留策略，包括自定义的个人保留标记。 然后你已经通过保留策略将保留标记分配给 Alex 和 Joni 的邮箱。
 
 
-### <a name="task-2--create-a-retention-policy-in-the-security-and-compliance-center"></a>任务 2 - 在安全和合规中心创建一个保留策略
+### <a name="task-2--create-a-retention-policy-in-the-microsoft-purview"></a>任务 2 - 在 Microsoft Purview 创建一个保留策略
 
-在 Adatum 的试点项目中，你将在安全和合规中心创建一个保留策略，以防止所有 Exchange Online 邮箱的内容在上次修改后 7 年内被删除。 
+在 Adatum 的试点项目中，你将在 Microsoft Purview 门户中创建一个保留策略，以防止所有 Exchange Online 邮箱的内容在上次修改后 7 年内被删除。 
 
-1. 在 Microsoft Edge 中，转到 [Microsoft 365 合规性](https://compliance.microsoft.com/)。   请确保以 Holly Dickson 的身份登录。
+1. 在 Microsoft Edge 中，导航至 [Microsoft Purview](https://compliance.microsoft.com/) 。  请确保以 Holly Dickson 的身份登录。
 
-2. 在左侧导航窗格中，单击“信息治理”（可能需要先单击“...全部显示”），然后选择“保留策略”选项卡。
+
+2. 在左侧导航窗格中，单击“数据生命周期管理”（可能需要先单击“... 全部显示”），然后选择“保留策略”选项卡。
 
 3. 在“保留策略”选项卡中，单击“+ 新建保留策略”启动用于创建新保留策略的向导 。
 
@@ -106,7 +107,7 @@ ms.locfileid: "137820927"
 
 9. 请不要关闭客户端 1 VM 或者 Microsoft Edge。 请让网页浏览器和所有标签保持打开状态，以便进行下一个实验室。
 
-你现在已经在安全和合规中心创建了新保留策略，所有电子邮箱中的 Exchange 邮件自上次修改后，都将保留七年。
+你现在已经在 Microsoft Purview 门户中创建了新保留策略，所有电子邮箱中的 Exchange 邮件自上次修改后，都将保留七年。
 
  # <a name="end-of-lab"></a>实验室结束
  

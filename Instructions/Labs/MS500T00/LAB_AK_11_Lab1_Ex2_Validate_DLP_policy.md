@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 0d8c501bb60591ceae43de0cca25eb0307ee3911
-ms.sourcegitcommit: 619124fc7aa1c770a67c77e6bbc16fa13e73f2f0
+ms.openlocfilehash: fbad1e8005568a331852266a7ad7047dd0c07253
+ms.sourcegitcommit: 042f2d80275d6d120a034be93973f99e1ae31aa6
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/04/2022
-ms.locfileid: "137820945"
+ms.lasthandoff: 07/01/2022
+ms.locfileid: "146819541"
 ---
 # <a name="module-11---lab-1---exercise-2---test-dlp-policies"></a>模块 11 - 实验室 1 - 练习 2 - 测试 DLP 策略
 
@@ -28,8 +28,9 @@ ms.locfileid: "137820945"
 
     - 添加主题：`DLP Policy Test`
 
-    - 消息区域：键入 `This customer has social security number: 123-45-6789`。
+    - 消息区域：键入 `This customer has social security number: 489-36-8350`。
 
+    > **注意**：使用的 SSN 是虚构的，源自数据丢失防护策略的示例数据的公共存储库。 测试这些策略时，请勿输入个人信息。
 
 5. 选择“发送”。
 
@@ -41,7 +42,7 @@ ms.locfileid: "137820945"
 
     - 添加主题：`multiple SSN test`
 
-    - 消息区域：`SSN = 123 45 6789 and another customer SSN 111 11 1111 and a third 222 22 2222`
+    - 消息区域：`SSN = 489-36-8350 and another customer SSN 514-14-8905 and a third 690-05-5315`
 
 8. 选择“发送”。
 
